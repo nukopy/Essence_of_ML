@@ -22,4 +22,3 @@ if __name__ == '__main__':
     plt.contour(x, y, z, levels=levels, colors="b")
     fig.savefig("../output/contour_plot.png")
     plt.show()  # must execute after savefig
-    

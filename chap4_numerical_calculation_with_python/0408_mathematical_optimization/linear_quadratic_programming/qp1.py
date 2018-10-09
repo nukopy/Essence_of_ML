@@ -78,10 +78,11 @@ if __name__ == '__main__':
     # text = "Optimal Solution\n(x, y) = ({x}, {y})\nf(x, y) = {z}".format(x=sol[0], y=sol[1], z=value)
     # ax1.text(sol[0], sol[1], s=text)
     ax1.set_title("$f(x, y) = x^2 + xy + y^2 + 2x + 4y$")
-    # colorbar
+    # colorbar config
     divider = make_axes_locatable(ax1)
     cax = divider.append_axes("right", "5%", pad="3%")
     plt.colorbar(mappable=img, ax=ax1, cax=cax)
+    # save
     fig1.savefig("../output/2d_quadratic_optimization.png", dpi=200)
     plt.close(fig1)
     
@@ -93,8 +94,8 @@ if __name__ == '__main__':
     ax2.set_title(label="$f(x, y) = x^2 + xy + y^2 + 2x + 4y$")
     # plot minimum value
     ax2.plot(sol[0], sol[1], value, marker="o", markersize=8, color="r")
-    #text = "Optimal Solution\n(x, y) = ({x}, {y})\nf(x, y) = {z}".format(x=sol[0], y=sol[1], z=value)
-    #ax2.text(x=sol[0], y=sol[1], z=value, s=text)
-    #plt.show()
+    # text = "Optimal Solution\n(x, y) = ({x}, {y})\nf(x, y) = {z}".format(x=sol[0], y=sol[1], z=value)
+    # ax2.text(x=sol[0], y=sol[1], z=value, s=text)
+    # plt.show()
     fig2.savefig("../output/3d_quadratic_optimization.png")
     plt.close(fig2)
