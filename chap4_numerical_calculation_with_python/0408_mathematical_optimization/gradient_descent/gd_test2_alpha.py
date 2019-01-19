@@ -4,7 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import gd
-import importlib;
+import importlib
 
 importlib.reload(gd)
 
@@ -56,18 +56,19 @@ if __name__ == '__main__':
         algo = gd.GradientDescent(f, df, alpha=alpha)
         initial = np.array([1, 1])
         algo.solve(initial)
-        
+
         # plot
         xmesh, ymesh, z = mesh(x_range, y_range, fxy=f)
         axes[i].scatter(initial[0], initial[1], marker="o", s=20)
         axes[i].plot(algo.path[:, 0], algo.path[:, 1], ls="-", color="k")
-        map_ax = axes[i].contour(xmesh, ymesh, z, linestyles="dotted", colors="b", levels=levels)  # cmap="jet"
-        
+        map_ax = axes[i].contour(
+            xmesh, ymesh, z, linestyles="dotted", colors="b", levels=levels)  # cmap="jet"
+
         # config
         axes[i].set_title("gradient_descent $\\alpha = {}$"
                           "\n$f(x, y) = 5x^2 - 6xy + 3y^2 + 6x - 6y$".format(alpha))
         axes[i].set(xlabel="x", ylabel="y", xlim=x_range, ylim=y_range)
-    
+
     # save
     fig.tight_layout()
     fig.savefig("../../output/gradient_descent_alpha.png", dpi=200)
